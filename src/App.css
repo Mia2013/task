@@ -4,3 +4,7 @@ body {
   box-sizing: border-box;
 }
 
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}

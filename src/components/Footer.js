@@ -4,8 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function Footer() {
   return (
     <Navbar bg="light" expand="lg"  fixed="bottom">
-      <Container>
-       <p>Készítette: Budavári Nikolett</p>
+      <Container className='d-flex justify-content-center'>
+       <p class="fst-italic fw-lighter">Készítette: Budavári Nikolett</p>
       </Container>
     </Navbar>
   );
