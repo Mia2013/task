@@ -1,17 +1,23 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+
 import Home from "./pages/Home";
 import Content from "./pages/Content";
-import Navbar from "./components/Navbar";
+import BasicNavbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="home" element={<Home />} />
-        <Route path="content" element={<Content />} />
-      </Routes>
+      <BasicNavbar />
+      <Container>
+        <Routes>
+          <Route path="home" element={<Home />} />
+          <Route path="content" element={<Content />} />
+        </Routes>
+      </Container>
+      <Footer/>
     </div>
   );
 }
