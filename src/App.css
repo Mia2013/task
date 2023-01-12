@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-p {
+p, #modal-table > tbody:last-child {
   text-align: justify;
   text-justify: inter-word;
 }
@@ -25,6 +25,10 @@ p {
 
 #footer {
   flex-shrink: 0;
-  background-color: rgba(30, 163, 225, 0.518);
+  background-color: rgba(13, 110, 253, 0.1);
   padding: 10px;
+}
+
+#details {
+  font-size: 0.8rem;
 }

@@ -9,7 +9,7 @@ export default function BasicNavbar() {
       <Container>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink to="home" className="nav-link">
+            <NavLink to="/" className="nav-link">
               Home
             </NavLink>
             <NavLink to="content" className="nav-link">

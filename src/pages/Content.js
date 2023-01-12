@@ -1,90 +1,28 @@
 import { useEffect, useContext, useState } from "react";
+import { Alert } from "react-bootstrap";
 import Container from "react-bootstrap/esm/Container";
-import Spinner from "../components/Spinner";
 import { tableItemsContext } from "../context/tableContext";
-import DataTable from "react-data-table-component";
-import ModalComponent from "../components/ModalComponent";
+import Title from "../components/Title";
+
+import DataTableComponent from "../components/DataTable";
 
 export default function Content() {
   const { items, error, getData } = useContext(tableItemsContext);
   const [spinner, setSpinner] = useState(true);
 
-
   useEffect(() => {
     getData();
     setSpinner(false);
-  }, []);
-
-
-
-  const columns = [
-    {
-      name: "Azonosító",
-      selector: (row) => row.id,
-      sortable: true,
-    },
-    {
-      name: "Márka",
-      selector: (row) => row.brand,
-      sortable: true,
-    },
-    {
-      name: "Típus",
-      selector: (row) => row.type,
-      sortable: true,
-    },
-    {
-      name: "Méretarány",
-      selector: (row) => `1 : ${row.size}`,
-      sortable: true,
-    },
-    {
-      name: "Készlet",
-      selector: (row) => row.stock,
-      sortable: true,
-      cell: (row) => (
-        <progress value={row.stock} max="100">
-          {row.stock}
-        </progress>
-      ),
-    },
-    {
-      name: "Ár",
-      selector: (row) => row.price,
-      sortable: true,
-      cell: (row) => new Intl.NumberFormat("en-IN").format(row.price) + " $",
-    },
-    {
-      button: true,
-      cell: (row) => (
-       <ModalComponent row={row}/>
-      ),
-    },
-  ];
-
-  const paginationComponentOptions = {
-    rowsPerPageText: "Sor/oldal  ",
-    rangeSeparatorText: "termék megjelenítve",
-    selectAllRowsItem: true,
-    selectAllRowsItemText: items?.length,
-  };
+  }, [getData]);
 
   return (
-    <Container className="my-3">
-      <h1>Termékek</h1>
-      {items && (
-        <DataTable
-          columns={columns}
-          data={items}
-          pagination
-          paginationComponentOptions={paginationComponentOptions}
-          responsive={true}
-          defaultSortFieldId={1}
-          highlightOnHover
-          pointerOnHover
-          progressPending={spinner}
-          progressComponent={<Spinner />}
-        />
+    <Container fluid="lg" className="my-3">
+      <Title title="Termékek" />
+      {items && <DataTableComponent spinner={spinner} />}
+      {error && (
+        <Alert variant="danger" className="my-5">
+          Sajnos a táblázat betöltése közben hiba történt.
+        </Alert>
       )}
     </Container>
   );

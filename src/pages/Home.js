@@ -1,9 +1,10 @@
 import Container from "react-bootstrap/esm/Container";
+import Title from "../components/Title";
 
 export default function Home() {
   return (
     <Container>
-      <h1 className="my-3">What is Lorem Ipsum?</h1>
+      <Title title="What is Lorem Ipsum?" />
       <div>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
