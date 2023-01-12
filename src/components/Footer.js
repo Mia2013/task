@@ -1,13 +1,11 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
 
 export default function Footer() {
   return (
-    <Navbar bg="light" expand="lg"  fixed="bottom">
-      <Container className='d-flex justify-content-center'>
-       <p className="fst-italic fw-lighter">Készítette: Budavári Nikolett</p>
+    <div bg="light" expand="lg" id="footer">
+      <Container className="d-flex justify-content-center align-items-center">
+        <p className="fst-italic fw-lighter">Készítette: Budavári Nikolett</p>
       </Container>
-    </Navbar>
+    </div>
   );
 }
-
