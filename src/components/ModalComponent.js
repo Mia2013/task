@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Book, Table } from "react-bootstrap-icons";
+import { Book } from "react-bootstrap-icons";
 
-export default function Example({ row }) {
+export default function ModalComponent({ row }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,7 +12,7 @@ export default function Example({ row }) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        <Book /> Részletek
+        <Book /> <span>Részletek</span>
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -23,23 +23,23 @@ export default function Example({ row }) {
           <table>
           <tbody>
             <tr>
-              <td>Márka</td>
+              <td className="pe-2 py-2 align-top">Márka</td>
               <td>{row.brand}</td>
             </tr>
             <tr>
-              <td>Típus</td>
+              <td className="pe-2 py-2 align-top">Típus</td>
               <td>{row.type}</td>
             </tr>
             <tr>
-              <td>Méretarány</td>
+              <td className="pe-2 py-2 align-top">Méretarány</td>
               <td>{`1 : ${row.size}`}</td>
             </tr>
             <tr>
-              <td>Ár</td>
+              <td className="pe-2 py-2 align-top">Ár</td>
               <td>{new Intl.NumberFormat("en-IN").format(row.price) + " $"}</td>
             </tr>
             <tr>
-              <td>Leírás</td>
+              <td className="pe-2 py-2 align-top">Leírás</td>
               <td>{row.description}</td>
             </tr>
             </tbody>

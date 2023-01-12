@@ -3,7 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import Spinner from "../components/Spinner";
 import { tableItemsContext } from "../context/tableContext";
 import DataTable from "react-data-table-component";
-import Example from "../components/Modal";
+import ModalComponent from "../components/ModalComponent";
 
 export default function Content() {
   const { items, error, getData } = useContext(tableItemsContext);
@@ -57,7 +57,7 @@ export default function Content() {
     {
       button: true,
       cell: (row) => (
-       <Example row={row}/>
+       <ModalComponent row={row}/>
       ),
     },
   ];
@@ -81,9 +81,9 @@ export default function Content() {
           responsive={true}
           defaultSortFieldId={1}
           highlightOnHover
-          // pointerOnHover
-          // progressPending={spinner}
-          // progressComponent={<Spinner />}
+          pointerOnHover
+          progressPending={spinner}
+          progressComponent={<Spinner />}
         />
       )}
     </Container>
