@@ -9,7 +9,7 @@ export const pages = [
   },
   {
     path: "content",
-    name: "Conent",
+    name: "Content",
     element: <Content />,
   },
 ];
