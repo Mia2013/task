@@ -11,6 +11,7 @@ export const TableItemsProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => {
         setItems([...data]);
+        setError(null);
       })
       .catch((error) => {
         setItems(null);
