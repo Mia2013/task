@@ -12,6 +12,10 @@ export default function ModalComponent({ row }) {
 
   const rowDataToDisplay = [
     {
+      title: "Azonosító",
+      data: row.id,
+    },
+    {
       title: "Márka",
       data: row.brand,
     },
@@ -26,6 +30,10 @@ export default function ModalComponent({ row }) {
     {
       title: "Ár",
       data: new Intl.NumberFormat("en-IN").format(row.price) + " $",
+    },
+    {
+      title: "Készlet",
+      data: row.stock + " db",
     },
     {
       title: "Leírás",
@@ -50,7 +58,7 @@ export default function ModalComponent({ row }) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Bezár
           </Button>
         </Modal.Footer>
       </Modal>

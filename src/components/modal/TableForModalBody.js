@@ -7,7 +7,7 @@ export default function TableForModalBody({ data }) {
       <tbody>
         {data.map((row) => (
           <tr key={id + row.title}>
-            <td className="pe-2 py-2 align-top">{row.title}</td>
+            <td className="pe-3 py-2 align-top">{row.title}</td>
             <td>{row.data}</td>
           </tr>
         ))}
