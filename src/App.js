@@ -1,18 +1,20 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Content from "./pages/Content";
 import BasicNavbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { pages } from "./components/pages";
 
 function App() {
   return (
     <div className="App">
-      <BasicNavbar />
+      <BasicNavbar pages={pages} />
       <div className="wrapper">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="content" element={<Content />} />
+          {
+            pages.map(page =>(
+              <Route path={page.path} element={page.element} />
+            ))
+          }
         </Routes>
       </div>
       <Footer />
