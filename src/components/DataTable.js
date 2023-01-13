@@ -65,14 +65,12 @@ export default function DataTableComponent({ spinner }) {
       style: {
         paddingLeft: "8px",
         paddingRight: "8px",
-        minWidth: "50px",
       },
     },
     cells: {
       style: {
         paddingLeft: "8px",
         paddingRight: "8px",
-        minWidth: "50px",
       },
     },
   };
